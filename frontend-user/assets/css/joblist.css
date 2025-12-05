@@ -1,0 +1,142 @@
+/* joblist.css - gaya sederhana, rapi & responsif */
+:root{
+    --primary: #0d6efd;
+    --muted: #6c757d;
+    --bg-card: #ffffff;
+    --radius: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #f8f9fb;
+    color: #222;
+    font-size: 0.95rem;
+}
+
+/* header tweaks */
+header .logo{ border-radius:8px; }
+
+/* card */
+.job-card{
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    transition: transform .14s ease, box-shadow .14s ease;
+    border: 0;
+}
+.job-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+}
+
+/* small meta */
+.job-meta { font-size: .82rem; color: var(--muted); }
+
+/* grid / list view helpers */
+.list-view .job-card { display:flex; gap:1rem; align-items:center; padding:1rem; }
+.list-view .job-card .job-img { flex:0 0 110px; }
+.list-view .job-card .job-content { flex:1; }
+
+/* badges & small */
+.badge-role { background: rgba(13,110,253,0.08); color: var(--primary); font-weight:600; }
+.small-muted { color: var(--muted); font-size: .85rem; }
+
+/* sticky aside on small screens - remove */
+@media (max-width: 991px) {
+    aside .sticky-top { position: static !important; top: auto; }
+}
+
+/* pagination */
+.pagination { margin-bottom: 0; }
+
+/* modal */
+.modal-body ul { padding-left: 1rem; }
+
+/* utility spacing for cards */
+.job-card .card-body { padding: .9rem; }
+
+/* page transition */
+body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* kerapihan halaman */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Kartu Lowongan */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.sticky-top {
+    top: 1rem;
+}
+
+/* Modal Responsif & Scrollable */
+.modal-dialog-scrollable .modal-body {
+    max-height: 70vh; 
+    overflow-y: auto;
+}
+.modal {
+    backdrop-filter: blur(3px); 
+}
+
+/* Responsif tampilan */
+@media (max-width: 768px) {
+    .card {
+    margin-bottom: 1rem;
+}
+}
+
+/* ==== Gaya untuk Grid dan List View ==== */
+
+/* Tampilan list */
+.list-view .job-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.list-view .job-card .card-body {
+    flex: 1;
+}
+
+.list-view .job-card h6 {
+    font-size: 1rem;
+}
+
+.list-view .job-card p {    
+    margin-bottom: 0.3rem;
+}
+
+.list-view .detail-btn {
+    width: auto;
+    align-self: center;
+}
+
+.list-view .col-md-6,
+.list-view .col-lg-4 {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Efek tombol aktif */
+.btn-group .btn.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
